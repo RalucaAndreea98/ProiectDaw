@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Produse PetShop</title>
+</head>
+<body>
+<div align="center">
+
+<h1> Produse</h1>
+<a href="new"> Adauga un produs nou </a>
+</br></br>
+
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+
+<th> Id Produs </th>
+<th> Nume </th>
+<th> Producator </th>
+<th> Pret </th>
+<th> Actiuni </th>
+
+</tr>
+</thead>
+
+<tbody>
+<tr th:each="produs:${listProducts}"> 
+<td th:text="${produs.id}">Id Produs</td>
+<td th:text="${produs.nume}">Nume</td>
+<td th:text="${produs.producator}">Producator</td>
+<td th:text="${produs.pret}">Pret</td>
+
+<td> 
+<a th:href="@{'/edit/' + ${produs.id}}"> Editeaza</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{'/delete/' + ${produs.id}}"> Sterge</a>
+
+</td>
+
+
+</tr>
+</tbody>
+
+
+
+
+</table>
+
+</div>
+
+
+</body>
+</html>
