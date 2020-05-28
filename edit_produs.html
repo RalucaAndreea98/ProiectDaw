@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editeaza produsul </title>
+</head>
+
+<body>
+ <div align="center">
+ <h1> Editeaza produsul </h1>
+ <br/>
+ <form action ="#" th:action="@{/save}" th:object="${produs}" method="post">
+ <table border="0" cellpadding="10">
+ 
+  <tr>
+ <td>Id produs:</td>
+ <td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+ </tr>
+ 
+ <tr>
+ <td>Numele produsului:</td>
+ <td><input type="text" th:field="*{nume}" /></td>
+ </tr>
+ 
+  <tr>
+ <td>Producatorul:</td>
+ <td><input type="text" th:field="*{producator}" /></td>
+ </tr>
+ 
+   <tr>
+ <td>Pret:</td>
+ <td><input type="text" th:field="*{pret}" /></td>
+ </tr>
+ 
+ <tr> <td colspan="2"> <button type="submit">Salveaza</button></td>
+ </tr>
+ 
+ </table>
+ </form>
+  </div>
+</body>
+</html>
